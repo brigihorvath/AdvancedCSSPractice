@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for advanced CSS practice",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brigihorvath/AdvancedCSSPractice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brigihorvath/AdvancedCSSPractice/issues"
+  },
+  "homepage": "https://github.com/brigihorvath/AdvancedCSSPractice#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

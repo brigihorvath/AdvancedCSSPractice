@@ -1,0 +1,214 @@
+$color-primary: #39CCCC;
+$color-primary-light: #7FDBFF;
+$color-primary-dark: #3D9970;
+
+$color-white: #fff;
+$color-grey: #777;
+$color-black: #000;
+
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+
+/*-set the root font-size to 10px
+-better practice to do it with percentage, bc this way the if the user sets 
+-the default font size to a bigger one, it won't ruin or design */
+html {
+	font-size: 62.5%;
+}
+
+/*it is a better practice to specify font related
+  things in the body, than in the universal selector*/
+
+body {
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+	/*font-size: 16px;*/
+	line-height: 1.7;
+	color: $color-white;
+	padding: 3rem;
+	box-sizing: border-box;
+
+}
+
+.header {
+	height: 95vh;
+	background: linear-gradient(
+		to right bottom, 
+		rgba($color-primary-light, 0.8), 
+		rgba($color-primary-dark, 0.8)) ,
+	url(../img/business-hero.jpg) 
+	top center/cover;
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	position: relative;
+}
+
+.header__logo-box {
+	position: absolute;
+	top: 4rem;
+	left: 4rem;
+}
+
+.header__logo {
+	height: 4rem;
+}
+
+/*HEADING*/
+
+.header__text-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.heading-primary {
+	color: $color-white;
+	text-align: center;
+	/*
+	*Every animation is a little shaky,
+	* no one knows why. Backface-visibility helps.
+	*/
+	backface-visibility: hidden;
+	margin-bottom: 3rem;
+	
+}
+
+.heading-primary--main {
+	display: block;
+	font-size: 4rem;
+	font-weight: 700;
+	letter-spacing: .5rem;
+	animation-name: moveInLeft;
+	-webkit-animation-duration: 1s;
+	-o-animation-duration: 1s;
+	animation-duration: 1s;
+	animation-timing-function: ease-in;
+	text-transform: uppercase;
+}
+
+.heading-primary--sub {
+	display: block;
+	font-size: 4rem;
+	font-weight: 100;
+	letter-spacing: .1rem;
+	animation: moveInRight 1s ease-in;
+
+}
+
+.btn:link,
+.btn:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 10rem;
+	transition: all .2s;
+	position: relative;
+	font-size: 1.6rem;
+}
+
+
+.btn:hover {
+	transform: translateY(-3px);
+	/*box-shadow: X, Y, blur color;*/
+	box-shadow: 0 1rem 2rem rgba($color-black,.2);
+}
+
+.btn:active {
+	transform: translateY(-1px);
+	box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+
+}
+
+.btn--white {
+	background-color: $color-white;
+	color: $color-primary-dark;
+	padding: 1.5rem 4rem;
+	display: inline-block;
+}
+
+.btn::after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 10rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all .4s;
+}
+
+.btn--white::after {
+	background-color: $color-white;
+}
+
+.btn:hover::after {
+	/*double size*/
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.btn--animated {
+	/*animation-name, animation-duration, animation-direction, animation-delay*/
+	animation: moveInBottom .5s ease-out .75s;
+	/*automatically set the zero position of the animation. This way the button won't show before the animation*/
+	animation-fill-mode: backwards;
+}
+
+/*ANIMATIONS*/
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+
+	80% {
+		transform: translateX(1rem);
+	}
+	100% {
+		opacity: 1;
+		/*to move exactly the same location, where it is defined*/
+		transform: translate(0);
+	}
+
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+
+	80% {
+		transform: translateX(-1rem);
+	}
+	100% {
+		opacity: 1;
+		/*to move exactly the same location, where it is defined*/
+		transform: translate(0);
+	}
+
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+
+	100% {
+		opacity: 1;
+		/*to move exactly the same location, where it is defined*/
+		transform: translate(0);
+	}
+
+}
