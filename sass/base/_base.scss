@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+
+/*-set the root font-size to 10px
+-better practice to do it with percentage, bc this way the if the user sets 
+-the default font size to a bigger one, it won't ruin or design */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+}
+

@@ -1,0 +1,44 @@
+/*it is a better practice to specify font related
+  things in the body, than in the universal selector*/
+
+body {
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 400;
+	/*font-size: 16px;*/
+	line-height: 1.7;
+	color: $color-white;
+	padding: 3rem;
+}
+
+.heading-primary {
+	color: $color-white;
+	text-align: center;
+	/*
+	*Every animation is a little shaky,
+	* no one knows why. Backface-visibility helps.
+	*/
+	backface-visibility: hidden;
+	margin-bottom: 3rem;
+
+	&--main {
+		display: block;
+		font-size: 4rem;
+		font-weight: 700;
+		letter-spacing: .5rem;
+		animation-name: moveInLeft;
+		-webkit-animation-duration: 1s;
+		-o-animation-duration: 1s;
+		animation-duration: 1s;
+		animation-timing-function: ease-in;
+		text-transform: uppercase;
+	}
+
+	&--sub {
+		display: block;
+		font-size: 4rem;
+		font-weight: 100;
+		letter-spacing: .1rem;
+		animation: moveInRight 1s ease-in;
+	}
+	
+}
