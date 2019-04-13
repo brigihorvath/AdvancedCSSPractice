@@ -9,7 +9,8 @@
 
 /*-set the root font-size to 10px
 -better practice to do it with percentage, bc this way the if the user sets 
--the default font size to a bigger one, it won't ruin or design */
+-the default font size to a bigger one, it won't ruin or design
+-62.5% equals to 10px */
 
 html {
 	font-size: 62.5%;
