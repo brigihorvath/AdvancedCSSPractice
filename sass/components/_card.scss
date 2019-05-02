@@ -13,6 +13,7 @@
 		top: 0;
 		left: 0;
 		width: 100%;
+		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		border-radius: 3px;
 		//the bac pic overflows the elementand destroys the br radius, so we should hide the extra parts
@@ -63,15 +64,15 @@
 		border-top-right-radius: 3px;
 
 		&--1 {
-			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/books_small.jpg);
+			background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/books.jpg);
 		}
 
 		&--2 {
-			background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/books_small.jpg);
+			background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../img/books.jpg);
 		}
 
 		&--3 {
-			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/books_small.jpg);
+			background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../img/books.jpg);
 		}
 	}
 

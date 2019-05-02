@@ -10,10 +10,20 @@
 		to right bottom, 
 		rgba($color-primary-light, 0.8), 
 		rgba($color-primary-dark, 0.8)) ,
-	url(../img/mac-with-flower.jpg) 
+	url(../img/mac-with-flower-large2.jpg) 
 	center center/cover;
 	transform: skewY(-7deg);
 	margin-top: -10rem;
+
+	@media (min-resolution: 192dpi) and (min-width: 37.5em),
+			(min-width: 75em) {
+		background: linear-gradient(
+		to right bottom, 
+		rgba($color-primary-light, 0.8), 
+		rgba($color-primary-dark, 0.8)) ,
+	url(../img/mac-with-flower-large.jpg) 
+	top center/cover;
+	}
 
 	@include respond(tab-port) {
 		padding: 10rem 0;
@@ -61,6 +71,15 @@
 		 url(../img/books.jpg) no-repeat center center/cover;
 	border-radius: 3px;
 	box-shadow: 0 1.5rem 4rem rgba($color-black, .3);
+
+	@media (min-resolution: 192dpi) and (min-width: 37.5em),
+			(min-width: 75em) {
+				background: linear-gradient(105deg, 
+					rgba($color-white, .9) 0%,
+					rgba($color-white, .9) 50%,
+					transparent 50%),
+				 	url(../img/books-large.jpg) no-repeat center center/cover;
+	}
 
 
 	@include respond(tab-land) {

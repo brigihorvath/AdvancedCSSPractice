@@ -4,7 +4,11 @@
   "description": "Landing page for advanced CSS practice",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/styles.css -w"
+    "watch:sass": "node-sass sass/main.scss css/styles.css -w",
+    "compile:sass": "node-sass sass/main.scss css/styles.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/styles.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/styles.css --output-style compressed"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,9 @@
   "homepage": "https://github.com/brigihorvath/AdvancedCSSPractice#readme",
   "dependencies": {},
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "autoprefixer": "^9.5.1",
+    "concat": "^1.0.3",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.2"
   }
 }

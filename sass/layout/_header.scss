@@ -1,14 +1,33 @@
 .header {
-	height: 95vh;
+	height: 85vh;
 	background: linear-gradient(
+		to right bottom, 
+		rgba($color-primary-light, 0.8), 
+		rgba($color-primary-dark, 0.8)) ,
+	url(../img/business-hero-small.jpg) 
+	top center/cover;
+	position: relative;
+
+	@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+		height: 95vh;
+	}
+
+	//the resolution of the Apple retina display
+	//in Safari the min-resolution does not work
+	@media (min-resolution: 192dpi) and (min-width: 37.5em),
+			(-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+			(min-width: 75em) {
+		background: linear-gradient(
 		to right bottom, 
 		rgba($color-primary-light, 0.8), 
 		rgba($color-primary-dark, 0.8)) ,
 	url(../img/business-hero.jpg) 
 	top center/cover;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-	position: relative;
+	}
+
+	
 
 	@include respond(phone) {
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
