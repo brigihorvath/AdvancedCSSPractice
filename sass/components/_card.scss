@@ -162,8 +162,9 @@
 		font-size: 6rem;
 		font-weight: 100;
 	}
-
-	@include respond(tab-port) {
+//As on touch devices we cannot hover, we should see the back of the cards without hovering on them
+	@media only screen and (max-width: 56.25em),
+			only screen and (hover: none) {
 		height: auto;
 		border-radius: 3px;
 		background-color: $color-white;
